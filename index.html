@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a4a85">
+  <title>食事動作評価</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-row">
+      <h1>食事動作評価</h1>
+      <button id="fontBtn" class="btn-font" type="button" aria-label="文字の大きさを変える">文字：大</button>
+    </div>
+    <nav class="tabs" aria-label="画面切り替え">
+      <button class="tab active" type="button" data-view="form">評価入力</button>
+      <button class="tab" type="button" data-view="history">記録一覧</button>
+    </nav>
+    <div id="progress" class="progress">
+      <div class="progress-text"><span id="progressText">回答済み 0 / 0</span></div>
+      <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 評価入力画面 -->
+    <section id="view-form" class="view">
+      <form id="evalForm" novalidate></form>
+      <div class="form-footer">
+        <button type="button" id="clearBtn" class="btn-secondary btn-wide">入力をすべて消す</button>
+      </div>
+    </section>
+
+    <!-- 記録一覧画面 -->
+    <section id="view-history" class="view" hidden>
+      <div class="card">
+        <h2 class="sec-title">保存した記録</h2>
+        <p id="cloudStatus" class="status-line"></p>
+        <p id="historyCount" class="status-line"></p>
+        <div class="btn-stack">
+          <button type="button" id="syncBtn" class="btn-primary btn-wide">未送信の記録を送信する</button>
+          <button type="button" id="csvBtn" class="btn-secondary btn-wide">この端末の記録をCSVで保存</button>
+          <button type="button" id="deleteLocalBtn" class="btn-danger btn-wide">この端末の記録を消す</button>
+        </div>
+      </div>
+      <div id="historyList" class="history-list"></div>
+    </section>
+  </main>
+
+  <div id="bottomBar" class="bottom-bar">
+    <button type="button" id="jumpMissingBtn" class="btn-secondary">未回答へ</button>
+    <button type="button" id="saveBtn" class="btn-primary">保存する</button>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <div id="dialog" class="dialog-backdrop" hidden>
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialogMsg">
+      <p id="dialogMsg" class="dialog-msg"></p>
+      <div id="dialogBtns" class="btn-stack"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
