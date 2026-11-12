@@ -31,7 +31,7 @@ const SECTIONS = [
     items: [
       { id: 'subject_id', type: 'text', label: '対象者ID', placeholder: '例：S001',
         hint: '氏名は入力せず、IDで記録してください' },
-      { id: 'evaluator', type: 'text', label: '評価者', placeholder: '例：須田' },
+      { id: 'evaluator', type: 'text', label: '評価者ID', placeholder: '例：D001' },
       { id: 'eval_date', type: 'date', label: '評価日' },
       { id: 'meal', type: 'single', label: '食事', compact: true,
         options: ['朝食', '昼食', '夕食', 'その他'] },
