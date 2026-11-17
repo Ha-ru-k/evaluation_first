@@ -29,7 +29,7 @@ const SECTIONS = [
     id: 'info',
     title: '基本情報',
     items: [
-      { id: 'subject_id', type: 'text', label: '対象者ID', placeholder: '例：S001',
+      { id: 'subject_id', type: 'text', label: '利用者ID', placeholder: '例：S001',
         hint: '氏名は入力せず、IDで記録してください' },
       { id: 'evaluator', type: 'text', label: '評価者ID', placeholder: '例：D001' },
       { id: 'eval_date', type: 'date', label: '評価日' },
